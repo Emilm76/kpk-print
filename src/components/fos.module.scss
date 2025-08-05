@@ -5,12 +5,12 @@
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     gap: 30px;
   }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  @media (min-width: 1300px) {
+    grid-template-columns: minmax(auto, 500px) 38%;
+    justify-content: space-between;
+    gap: 60px;
+  }
 }

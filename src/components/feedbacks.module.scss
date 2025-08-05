@@ -1,0 +1,54 @@
+.slide {
+  @media (min-width: 1024px) {
+    flex: 0 0 calc(33.33% - 13.333px);
+    padding: 32px;
+  }
+
+  + .slide {
+    margin-left: 16px;
+    @media (min-width: 768px) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.card {
+  background-color: var(--color-light);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.showMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.date {
+  color: var(--color-grey);
+}
+.rating {
+  display: flex;
+}
+.star {
+  color: #fc0;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.pagination {
+  margin-top: 16px;
+  @media (min-width: 1024px) {
+    margin-top: 24px;
+  }
+}

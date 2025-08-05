@@ -9,8 +9,8 @@
   font-weight: inherit;
   line-height: inherit;
 
-  padding: 16px 24px;
-  color: var(--color-blue);
+  padding: 14px 24px;
+  color: var(--color-blue-dark);
   border: 1px solid var(--color-blue);
   background-color: transparent;
   border-radius: 10px;
@@ -36,11 +36,12 @@
     color: var(--color-grey);
   }
 
-  &:hover {
+  &:hover,
+  &.fill {
     border-color: var(--color-blue-dark);
   }
   &:focus,
-  &._fill {
+  &.fill {
     outline: none;
   }
   &:disabled {

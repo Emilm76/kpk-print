@@ -8,7 +8,6 @@ export function TextField({
   ...props
 }: {
   className?: string;
-  error?: string;
 } & InputHTMLAttributes<HTMLInputElement>) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [filled, setFilled] = useState(false);
@@ -20,7 +19,7 @@ export function TextField({
   return (
     <input
       {...props}
-      className={clsx(styles.input, filled && '_fill', className)}
+      className={clsx(styles.input, filled && styles.fill, className)}
       onChange={handleChange}
       ref={inputRef}
     />

@@ -1,4 +1,5 @@
 import { AboutSection } from '@/components/about';
+import { FeedbacksSection } from '@/components/feedbacks';
 import { Footer } from '@/components/footer/footer';
 import { FosSection } from '@/components/fos';
 import { Header } from '@/components/header/header';
@@ -18,6 +19,7 @@ export default function Home() {
         <ServicesSection />
         <WhySection />
         <FosSection />
+        <FeedbacksSection />
       </main>
 
       <Footer />

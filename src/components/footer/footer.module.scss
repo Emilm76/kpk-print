@@ -11,6 +11,7 @@
   flex-direction: column;
   gap: 4px;
   text-align: center;
+  color: var(--color-dark);
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;

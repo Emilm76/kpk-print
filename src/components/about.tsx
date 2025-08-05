@@ -8,7 +8,7 @@ export function AboutSection() {
     <section className={clsx(styles.section, 'section-pt')}>
       <div className={clsx(styles.container, 'container')}>
         <div className={styles.text}>
-          <h2 className="h2">Инженерная печать</h2>
+          <h2 className="h2 h-pb-sm">Инженерная печать</h2>
           <p>
             Центр инженерной печати КПК-Принт предоставляет услуги по
             оперативной печати, фальцеванию и&nbsp;брошюрованию чертежей,
