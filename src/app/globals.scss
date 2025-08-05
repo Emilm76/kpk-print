@@ -1,0 +1,346 @@
+:root {
+  --header-height: 80px;
+  --container-padding: 24px;
+  --color-blue: #79aad1;
+  --color-blue-dark: #3079ca;
+  --color-dark: #111431;
+  --color-grey: #bdc7c7;
+  --color-light: #f1f6f6;
+  --color-hover: #5e9f9f;
+  --color-disabled: #dddddd;
+  --color-white: #ffffff;
+
+  --color-red: #cf1500;
+  --color-yellow: #efb700;
+  --color-green: #17ac00;
+
+  //--color-red: #cf1500;
+  //--color-yellow: #efb700;
+  //--color-green: #17ac00;
+  //--color-blue: #87cdcd;
+  //--color-dark: #111431;
+  //--color-grey: #bdc7c7;
+  //--color-light: #f1f6f6;
+  //--color-hover: #5e9f9f;
+  //--color-disabled: #dddddd;
+
+  @media (min-width: 768px) {
+    --container-padding: 40px;
+  }
+  @media (min-width: 1300px) {
+    --container-padding: 80px;
+  }
+}
+
+// Стили сброса
+html,
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+input::placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  user-select: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  &:disabled {
+    cursor: default;
+  }
+}
+
+ol[role='list'],
+ul[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+::-moz-selection {
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+body {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--color-dark);
+  background-color: #fff;
+  @media (min-width: 1300px) {
+    font-size: 18px;
+  }
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+.page-transition {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #2a0f0f;
+  overflow: hidden;
+  z-index: 10;
+}
+
+// Текст
+.h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 500;
+  @media (min-width: 1300px) {
+    font-size: 60px;
+  }
+}
+.h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 400;
+  @media (min-width: 1300px) {
+    font-size: 56px;
+  }
+}
+.h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+  @media (min-width: 1300px) {
+    font-size: 28px;
+  }
+}
+.subtitle {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  @media (min-width: 1300px) {
+    font-size: 20px;
+  }
+}
+
+.info {
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 200;
+  @media (min-width: 1300px) {
+    font-size: 14px;
+  }
+}
+
+.blue {
+  color: var(--color-blue);
+}
+
+// Переиспользуемые блоки
+.container {
+  max-width: 1780px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+html,
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-grey);
+    border-radius: 2px;
+  }
+  // для firefox
+  scrollbar-color: var(--color-grey) transparent;
+  scrollbar-width: thin;
+}
+
+.section-pt {
+  padding-top: 120px;
+  @media (min-width: 1300px) {
+    padding-top: 180px;
+  }
+}
+
+.h-pb {
+  margin-bottom: 32px;
+  @media (min-width: 1300px) {
+    margin-bottom: 32px;
+  }
+}
+
+.input {
+  width: 100%;
+  float: left;
+  display: block;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  padding: 16px 24px;
+  color: var(--color-white);
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: var(--color-grey);
+  background-color: transparent;
+
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-property: color, border-color;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+  @media (min-width: 1750px) {
+    font-size: 17px;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::placeholder {
+    color: var(--color-grey);
+  }
+
+  &:hover {
+    border-color: transparent;
+  }
+  &:focus,
+  &._fill {
+    outline: none;
+    border-color: transparent;
+  }
+  &:disabled {
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+  transition-property: border-color;
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-purple);
+  background-color: transparent;
+  border-radius: 0;
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    background-color: var(--color-purple);
+    transition: opacity 0.15s ease-out;
+  }
+
+  &:checked {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.link {
+  transition: color 0.15s ease;
+  &:hover {
+    color: var(--color-blue);
+  }
+}
+
+.list {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-blue);
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+import AboutImg from '@/images/o1.jpg';
+import clsx from 'clsx';
+import Image from 'next/image';
+import styles from './about.module.scss';
+
+export function AboutSection() {
+  return (
+    <section className={clsx(styles.section, 'section-pt')}>
+      <div className={clsx(styles.container, 'container')}>
+        <div className={styles.text}>
+          <h2 className="h2">Инженерная печать</h2>
+          <p>
+            Центр инженерной печати КПК-Принт предоставляет услуги по
+            оперативной печати, фальцеванию и&nbsp;брошюрованию чертежей,
+            проектов, графиков, схем. Наша компания производит печать чертежей
+            в&nbsp;минимальные сроки по низким и справедливым ценам в Ставрополе
+            и Ставропольском крае. Наше оборудование позволяет печатать чертежи,
+            проекты формата от А4 до А0 +. Мы постоянно инвестируем в технологии
+            и наших специалистов, чтобы максимально эффективно предоставлять
+            наши услуги заказчикам. Любая, даже самая сложная задача для нас
+            выполнима!
+          </p>
+        </div>
+        <Image className={styles.img} src={AboutImg} alt="" />
+      </div>
+    </section>
+  );
+}

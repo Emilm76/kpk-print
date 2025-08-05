@@ -1,0 +1,13 @@
+.button {
+  padding: 15px 48px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+
+  transition: background-color 0.15s ease-out;
+
+  &:hover {
+    background-color: var(--color-dark);
+  }
+}

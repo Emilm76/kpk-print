@@ -1,0 +1,146 @@
+.header {
+  --bg: #fffffd;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--bg);
+  //background-color: rgba(255, 255, 255, 0.8);
+  //backdrop-filter:blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0 2px 4px -2px rgba(0, 0, 0, 0.08);
+
+  .nav {
+    display: none;
+    @media (min-width: 1300px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      ul {
+        display: flex;
+        gap: 32px;
+      }
+    }
+  }
+
+  .navAction {
+    display: none;
+    @media (min-width: 1300px) {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logo {
+  @media (min-width: 768px) {
+    margin-right: 100px;
+  }
+
+  img {
+    // 850x446
+    width: 102px;
+    height: 60px;
+  }
+}
+
+// Burger
+.burger {
+  @media (min-width: 1300px) {
+    display: none;
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  .navAction {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.burgerContainer {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 260px;
+  background-color: var(--color-white);
+  padding-top: 16px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width: 500px) {
+    max-width: 300px;
+  }
+  @media (min-width: 768px) {
+    max-width: 380px;
+  }
+}
+
+.burgerOpenBtn {
+  @media (max-width: 1300px) {
+  }
+  @media (min-width: 1300px) {
+    display: none;
+  }
+}
+.burgerCloseBtn {
+  @media (max-width: 1300px) {
+    margin-left: auto;
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.6s ease;
+}
+
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 105;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  @media (min-width: 1300px) {
+    display: none;
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+    .bg {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+}
