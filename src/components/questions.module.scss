@@ -1,0 +1,56 @@
+.block {
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 16px;
+  cursor: pointer;
+  user-select: none;
+
+  @media (min-width: 1024px) {
+    padding: 32px;
+  }
+
+  + .block {
+    margin-top: 16px;
+  }
+
+  &.open {
+    .content {
+      display: block;
+    }
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.blockWrapper {
+  position: relative;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+
+  svg {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    @media (min-width: 1024px) {
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.content {
+  display: none;
+  margin-top: 10px;
+  max-width: 1200px;
+
+  @media (min-width: 1024px) {
+    margin-top: 16px;
+  }
+}

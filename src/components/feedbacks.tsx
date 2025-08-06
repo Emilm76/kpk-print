@@ -24,7 +24,7 @@ const reviews = [
   {
     name: 'Валентина Богомолова',
     date: '28 ноября 2024',
-    text: 'Очень хорошая организация, цены адекватные, быстро реагируют. Приветливые улыбчивые сотрудники.Печатаю лекала для одежды только у них.',
+    text: 'Очень хорошая организация, цены адекватные, быстро реагируют. Приветливые улыбчивые сотрудники. Печатаю лекала для одежды только у них.',
   },
   {
     name: 'Наталья Мануйлова',
@@ -36,17 +36,9 @@ const reviews = [
     date: '7 ноября 2024',
     text: 'Заказываю распечатку только здесь. Работают оперативно, очень удобно, что можно заранее отправлять чертежи, сразу посчитают и стоимость и сроки выполнения. Качество печати хорошее!',
   },
-  /*{
-    name: 'Артём П',
-    date: '29 ноября 2024',
-    text: 'Заказывал печатный проект у данной компании, соглашусь с остальными, действительно всё быстро, качественно и внимательно подходят к своей работе.',
-  },
-  {
-    name: 'Нина Шевкунова',
-    date: '16 ноября 2024',
-    text: 'Не первый раз обращаюсь за распечатками лекал , все очень оперативно и качественно!',
-  },*/
 ];
+
+const reviewsUrl = 'https://yandex.ru/maps/org/kpk_print/137399331691/reviews/';
 
 export function FeedbacksSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, duration: 30 }, [
@@ -54,33 +46,31 @@ export function FeedbacksSection() {
   ]);
 
   return (
-    <section className="section-pt">
+    <section id="feedbacks" className="section-pt">
       <div className="container">
         <h2 className="h2 h-pb center">Отзывы клиентов</h2>
 
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
             {reviews.map((r, index) => (
-              <div
+              <a
+                href={reviewsUrl}
+                target="_blank"
                 className={clsx(styles.slide, styles.card, 'embla__slide')}
                 key={index}
               >
                 <Feedback {...r} />
-              </div>
+              </a>
             ))}
             <div
               className={clsx(styles.slide, styles.showMore, 'embla__slide')}
             >
-              <a
-                href="https://yandex.ru/maps/org/kpk_print/137399331691/reviews/"
-                target="_blank"
-                className="link-blue"
-              >
+              <a href={reviewsUrl} target="_blank" className="link-blue">
                 Читать все отзывы
               </a>
             </div>
           </div>
-          <EmblaPagination emblaApi={emblaApi} />
+          <EmblaPagination emblaApi={emblaApi} className={styles.pagination} />
         </div>
       </div>
     </section>

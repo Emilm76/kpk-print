@@ -95,22 +95,22 @@ function HeaderLinks() {
     <nav className={styles.nav}>
       <ul role="list">
         <li>
-          <a className="link" href="#">
+          <a className="link" href="#services">
             Услуги
           </a>
         </li>
         <li>
-          <a className="link" href="#">
+          <a className="link" href="#feedbacks">
             Отзывы
           </a>
         </li>
         <li>
-          <a className="link" href="#">
+          <a className="link" href="#questions">
             Вопросы
           </a>
         </li>
         <li>
-          <a className="link" href="#">
+          <a className="link" href="#contacts">
             Контакты
           </a>
         </li>
@@ -125,7 +125,7 @@ function HeaderAction() {
       <button className="" type="button">
         Ставрополь
       </button>
-      <a href="tel: 89283108445" className="header__tel subtitle">
+      <a href="tel:89283108445" className="subtitle">
         8 (928) 310-84-45
       </a>
     </div>

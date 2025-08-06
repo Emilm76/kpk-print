@@ -6,7 +6,7 @@ import styles from './services.module.scss';
 
 export function ServicesSection() {
   return (
-    <section className={clsx(styles.section, 'section-pt')}>
+    <section id="services" className={clsx(styles.section, 'section-pt')}>
       <div className={clsx(styles.container, 'container')}>
         <h2 className="h2 h-pb">Наши услуги</h2>
 

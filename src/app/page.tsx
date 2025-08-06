@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer/footer';
 import { FosSection } from '@/components/fos';
 import { Header } from '@/components/header/header';
 import { MainSection } from '@/components/main';
+import { QuestionsSection } from '@/components/questions';
 import { ServicesSection } from '@/components/services';
 import { WhySection } from '@/components/why';
 import styles from './page.module.scss';
@@ -20,6 +21,7 @@ export default function Home() {
         <WhySection />
         <FosSection />
         <FeedbacksSection />
+        <QuestionsSection />
       </main>
 
       <Footer />

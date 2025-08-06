@@ -1,4 +1,6 @@
 .slide {
+  display: block;
+
   @media (min-width: 1024px) {
     flex: 0 0 calc(33.33% - 13.333px);
     padding: 32px;

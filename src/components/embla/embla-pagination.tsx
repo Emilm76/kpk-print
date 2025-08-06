@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import { UseEmblaCarouselType } from 'embla-carousel-react';
+import { EmblaCarouselType } from 'embla-carousel';
 import { DotButton, useDotButton } from './embla-dot-button';
 
 export function EmblaPagination({
   emblaApi,
   className,
 }: {
-  emblaApi: UseEmblaCarouselType;
+  emblaApi: EmblaCarouselType | undefined;
   className?: string;
 }) {
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -18,8 +18,9 @@ export function EmblaPagination({
         <DotButton
           key={index}
           onClick={() => onDotButtonClick(index)}
-          className={'embla__dot'.concat(
-            index === selectedIndex ? ' embla__dot--selected' : ''
+          className={clsx(
+            'embla__dot',
+            index === selectedIndex && ' embla__dot--selected'
           )}
         />
       ))}

@@ -1,8 +1,53 @@
 .footer {
 }
 
+.title {
+  //margin-bottom: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+.social {
+  display: flex;
+  gap: 16px;
+}
+
+.right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  @media (min-width: 1024px) {
+    gap: 24px;
+  }
+}
+
+.whatsapp,
+.telegram {
+  color: var(--color-blue);
+}
+
 .bottom {
   background-color: var(--color-light);
+  margin-top: 32px;
 }
 
 .bottomContainer {
