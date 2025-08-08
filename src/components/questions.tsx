@@ -1,4 +1,5 @@
 'use client';
+import { ArrowDown } from '@/images/icons/arrow-down';
 import clsx from 'clsx';
 import { ReactNode, useState } from 'react';
 import styles from './questions.module.scss';
@@ -50,26 +51,5 @@ function Spoiler({ title, children }: { title: string; children: ReactNode }) {
         <div className={styles.content}>{children}</div>
       </div>
     </div>
-  );
-}
-
-function ArrowDown({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="48"
-      height="49"
-      viewBox="0 0 48 49"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M10 18.6624L23 31.6624L36 18.6624"
-        stroke="#3079ca"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

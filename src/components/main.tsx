@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import styles from './main.module.scss';
 
-export function MainSection() {
+export function MainSection({ region }: { region: string }) {
   const section = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -25,12 +25,10 @@ export function MainSection() {
         <div className={styles.wrapper}>
           <div className={clsx(styles.container, 'container')}>
             <div className={styles.content}>
-              <h1 className="h1">
-                Профессиональная печать чертежей и&nbsp;проектов
-              </h1>
+              <h1 className="h1">Профессиональная печать чертежей {region}</h1>
               <p>
                 Доверьтесь нам, если вам нужна надежная и&nbsp;профессиональная
-                печать в&nbsp;короткие сроки.
+                печать чертежей и&nbsp;проектов в&nbsp;короткие сроки.
               </p>
               <ButtonText type="button" onClick={() => setIsModalOpen(true)}>
                 СВЯЖИТЕСЬ И ПОЛУЧИТЕ РАСЧЕТ В ТЕЧЕНИЕ 10 МИНУТ

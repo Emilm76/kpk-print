@@ -1,12 +1,16 @@
 'use client';
+import { City } from '@/app/constants';
+import { BurgerCloseIcon } from '@/images/icons/burger-close';
+import { BurgerOpenIcon } from '@/images/icons/burger-open';
 import LogoImg from '@/images/icons/logo-2-crop.jpg';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
+import { CitySelect } from '../city-select/city-select';
 import styles from './header.module.scss';
 
-export function Header() {
+export function Header({ city }: { city: City }) {
   const header = useRef<HTMLDivElement>(null);
   const burger = useRef<HTMLDivElement>(null);
 
@@ -33,29 +37,14 @@ export function Header() {
           </Link>
 
           <HeaderLinks />
-          <HeaderAction />
+          <HeaderAction city={city} />
 
           <button
             className={styles.burgerOpenBtn}
             onClick={handleOpenClick}
             type="button"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="none"
-            >
-              <circle cx="6" cy="6" r="3" fill="currentColor" />
-              <circle cx="6" cy="16" r="3" fill="currentColor" />
-              <circle cx="6" cy="26" r="3" fill="currentColor" />
-              <circle cx="16" cy="6" r="3" fill="currentColor" />
-              <circle cx="16" cy="16" r="3" fill="currentColor" />
-              <circle cx="16" cy="26" r="3" fill="currentColor" />
-              <circle cx="26" cy="6" r="3" fill="currentColor" />
-              <circle cx="26" cy="16" r="3" fill="currentColor" />
-              <circle cx="26" cy="26" r="3" fill="currentColor" />
-            </svg>
+            <BurgerOpenIcon />
           </button>
         </div>
         <div className={styles.shadow}></div>
@@ -68,21 +57,10 @@ export function Header() {
             onClick={handleCloseClick}
             type="button"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="none"
-            >
-              <circle cx="6" cy="6" r="3" fill="currentColor" />
-              <circle cx="6" cy="26" r="3" fill="currentColor" />
-              <circle cx="16" cy="16" r="3" fill="currentColor" />
-              <circle cx="26" cy="6" r="3" fill="currentColor" />
-              <circle cx="26" cy="26" r="3" fill="currentColor" />
-            </svg>
+            <BurgerCloseIcon />
           </button>
           <HeaderLinks />
-          <HeaderAction />
+          <HeaderAction city={city} />
         </div>
         <div className={styles.bg}></div>
       </div>
@@ -119,12 +97,11 @@ function HeaderLinks() {
   );
 }
 
-function HeaderAction() {
+function HeaderAction({ city }: { city: City }) {
   return (
     <div className={styles.navAction}>
-      <button className="" type="button">
-        Ставрополь
-      </button>
+      <CitySelect className={styles.select} currentCity={city} />
+
       <a href="tel:89283108445" className="subtitle">
         8 (928) 310-84-45
       </a>

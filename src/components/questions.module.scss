@@ -4,6 +4,10 @@
   border-radius: 16px;
   cursor: pointer;
   user-select: none;
+  box-shadow: none;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-property: box-shadow, transform;
 
   @media (min-width: 1024px) {
     padding: 32px;
@@ -11,6 +15,11 @@
 
   + .block {
     margin-top: 16px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
 
   &.open {
@@ -37,6 +46,7 @@
     flex: 0 0 32px;
     width: 32px;
     height: 32px;
+    color: var(--color-blue);
     @media (min-width: 1024px) {
       flex: 0 0 48px;
       width: 48px;
