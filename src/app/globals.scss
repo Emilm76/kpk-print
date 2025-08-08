@@ -10,6 +10,10 @@
   --color-disabled: #dddddd;
   --color-white: #ffffff;
 
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-in-out-back-2: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   --color-red: #cf1500;
   --color-yellow: #efb700;
   --color-green: #17ac00;
