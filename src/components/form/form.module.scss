@@ -7,3 +7,16 @@
     gap: 14px;
   }
 }
+
+.message {
+  //color: var(--color-blue-dark);
+
+  &.wait {
+  }
+  &.susses {
+    color: oklch(72.3% 0.219 149.579);
+  }
+  &.error {
+    color: oklch(63.7% 0.237 25.331);
+  }
+}

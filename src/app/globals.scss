@@ -217,6 +217,12 @@ html,
     padding-top: 180px;
   }
 }
+.section-pt-sm {
+  padding-top: 80px;
+  @media (min-width: 1300px) {
+    padding-top: 140px;
+  }
+}
 
 .h-pb {
   margin-bottom: 32px;

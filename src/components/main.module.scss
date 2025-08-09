@@ -52,8 +52,8 @@
   z-index: 5;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: end;
+  align-items: flex-start;
+  justify-content: flex-end;
   height: 100%;
   max-width: 1000px;
   padding: 48px 0;
