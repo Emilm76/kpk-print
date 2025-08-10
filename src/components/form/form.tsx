@@ -2,6 +2,7 @@
 import { ButtonPrimary } from '@/ui/button/button-primary';
 import { TelField } from '@/ui/input/tel-field';
 import { TextField } from '@/ui/input/text-field';
+import { Textarea } from '@/ui/input/textarea';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 import styles from './form.module.scss';
@@ -25,6 +26,7 @@ export function Form() {
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string | null;
     const tel = formData.get('tel') as string | null;
+    const desc = formData.get('desc') as string | null;
 
     if (!name || !tel || tel.length < 18) {
       console.log('notComplete');
@@ -35,9 +37,14 @@ export function Form() {
     setIsLoading(true);
     setMessage(status.wait);
 
-    const message = `<b>Новая заявка</b>\n${name ? `Имя: ${name}\n` : ''}${
-      tel ? `Телефон: <b>${tel}</b>` : ''
-    }`;
+    const txt = [
+      '<b>Новая заявка</b>',
+      name && `\nИмя: ${name}`,
+      tel && `\nТелефон: <b>${tel}</b>`,
+      desc && `\nОписание: ${desc}`,
+    ];
+
+    const message = clsx(...txt);
 
     try {
       const response = await fetch(
@@ -73,16 +80,23 @@ export function Form() {
       <TextField
         type="text"
         name="name"
-        placeholder="Ваше имя"
+        placeholder="Ваше имя *"
         autoComplete="off"
         required
       />
       <TelField
         type="tel"
         name="tel"
-        placeholder="Номер телефона"
+        placeholder="Номер телефона *"
         autoComplete="off"
         required
+      />
+      <Textarea
+        name="desc"
+        placeholder="Описание и ваши пожелания"
+        autoComplete="off"
+        rows={4}
+        maxLength={1000}
       />
       <ButtonPrimary type="submit" disabled={isLoading}>
         Отправить

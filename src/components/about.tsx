@@ -20,7 +20,7 @@ export function AboutSection({ region }: { region: string }) {
             Любая, даже самая сложная задача для нас выполнима!
           </p>
         </div>
-        <Image className={styles.img} src={AboutImg} alt="" />
+        <Image className={styles.img} src={AboutImg} alt="Чертежи на столе" />
       </div>
     </section>
   );

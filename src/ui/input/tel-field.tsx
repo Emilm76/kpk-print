@@ -27,7 +27,7 @@ export function TelField({
   return (
     <IMaskInput
       {...props}
-      className={clsx(styles.input, filled && styles.fill, className)}
+      className={clsx(styles.input, className, filled && styles.fill)}
       mask="+{7} (000) 000-00-00"
       inputRef={inputRef}
       onAccept={handleChange}

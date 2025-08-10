@@ -14,18 +14,22 @@ export function Header({ city }: { city: City }) {
   const header = useRef<HTMLDivElement>(null);
   const burger = useRef<HTMLDivElement>(null);
 
-  function handleOpenClick() {
+  function openBurger() {
     if (header.current && burger.current) {
       burger.current.classList.add(styles.open);
       document.body.classList.add('locked');
     }
   }
 
-  function handleCloseClick() {
+  function closeBurger() {
     if (header.current && burger.current) {
       burger.current.classList.remove(styles.open);
       document.body.classList.remove('locked');
     }
+  }
+
+  function handleLinkClick() {
+    closeBurger();
   }
 
   return (
@@ -33,15 +37,15 @@ export function Header({ city }: { city: City }) {
       <header className={styles.header} ref={header}>
         <div className={clsx(styles.container, 'container')}>
           <Link href="/" className={styles.logo}>
-            <Image src={LogoImg} alt="Логотип КПК-Принт" />
+            <Image src={LogoImg} priority={true} alt="Логотип КПК-Принт" />
           </Link>
 
-          <HeaderLinks />
+          <HeaderLinks linkClickCallback={handleLinkClick} />
           <HeaderAction city={city} />
 
           <button
             className={styles.burgerOpenBtn}
-            onClick={handleOpenClick}
+            onClick={openBurger}
             type="button"
           >
             <BurgerOpenIcon />
@@ -54,12 +58,12 @@ export function Header({ city }: { city: City }) {
         <div className={clsx(styles.burgerContainer, 'container')}>
           <button
             className={styles.burgerCloseBtn}
-            onClick={handleCloseClick}
+            onClick={closeBurger}
             type="button"
           >
             <BurgerCloseIcon />
           </button>
-          <HeaderLinks />
+          <HeaderLinks linkClickCallback={handleLinkClick} />
           <HeaderAction city={city} />
         </div>
         <div className={styles.bg}></div>
@@ -68,27 +72,27 @@ export function Header({ city }: { city: City }) {
   );
 }
 
-function HeaderLinks() {
+function HeaderLinks({ linkClickCallback }: { linkClickCallback: () => void }) {
   return (
     <nav className={styles.nav}>
       <ul role="list">
         <li>
-          <a className="link" href="#services">
+          <a className="link" href="#services" onClick={linkClickCallback}>
             Услуги
           </a>
         </li>
         <li>
-          <a className="link" href="#feedbacks">
+          <a className="link" href="#feedbacks" onClick={linkClickCallback}>
             Отзывы
           </a>
         </li>
         <li>
-          <a className="link" href="#questions">
+          <a className="link" href="#questions" onClick={linkClickCallback}>
             Вопросы
           </a>
         </li>
         <li>
-          <a className="link" href="#contacts">
+          <a className="link" href="#contacts" onClick={linkClickCallback}>
             Контакты
           </a>
         </li>

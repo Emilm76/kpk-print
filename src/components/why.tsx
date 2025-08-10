@@ -16,27 +16,27 @@ export function WhySection() {
 
         <div className={styles.grid}>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img1} alt="" />
+            <Image className={styles.img} src={Img1} alt="Иконка форматы" />
             <p>Форматы любой сложности</p>
           </div>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img2} alt="" />
+            <Image className={styles.img} src={Img2} alt="Иконка скорость" />
             <p>Высокая скорость</p>
           </div>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img3} alt="" />
+            <Image className={styles.img} src={Img3} alt="Иконка точность" />
             <p>Точность деталей</p>
           </div>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img4} alt="" />
+            <Image className={styles.img} src={Img4} alt="Иконка инструменты" />
             <p>Дополнительные инструменты</p>
           </div>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img5} alt="" />
+            <Image className={styles.img} src={Img5} alt="Иконка карта" />
             <p>Удобное расположение</p>
           </div>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img6} alt="" />
+            <Image className={styles.img} src={Img6} alt="Иконка страны" />
             <p>Доставка по стране</p>
           </div>
         </div>

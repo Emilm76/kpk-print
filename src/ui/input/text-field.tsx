@@ -19,7 +19,7 @@ export function TextField({
   return (
     <input
       {...props}
-      className={clsx(styles.input, filled && styles.fill, className)}
+      className={clsx(styles.input, className, filled && styles.fill)}
       onChange={handleChange}
       ref={inputRef}
     />

@@ -20,7 +20,12 @@ export function MainSection({ region }: { region: string }) {
   return (
     <>
       <section className={styles.section} ref={section}>
-        <Image className={styles.img} src={BgImg} alt="Напечатанные чертежи" />
+        <Image
+          className={styles.img}
+          src={BgImg}
+          priority={true}
+          alt="Напечатанные чертежи"
+        />
 
         <div className={styles.wrapper}>
           <div className={clsx(styles.container, 'container')}>
