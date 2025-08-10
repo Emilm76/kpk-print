@@ -24,6 +24,8 @@ export function MainSection({ region }: { region: string }) {
           className={styles.img}
           src={BgImg}
           priority={true}
+          fetchPriority="high"
+          sizes="(max-width: 768px) 100vh,  100vw"
           alt="Напечатанные чертежи"
         />
 

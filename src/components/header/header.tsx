@@ -37,7 +37,12 @@ export function Header({ city }: { city: City }) {
       <header className={styles.header} ref={header}>
         <div className={clsx(styles.container, 'container')}>
           <Link href="/" className={styles.logo}>
-            <Image src={LogoImg} priority={true} alt="Логотип КПК-Принт" />
+            <Image
+              src={LogoImg}
+              priority={true}
+              fetchPriority="high"
+              alt="Логотип КПК-Принт"
+            />
           </Link>
 
           <HeaderLinks linkClickCallback={handleLinkClick} />

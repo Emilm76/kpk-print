@@ -12,7 +12,12 @@ export function ServicesSection() {
 
         <div className={styles.grid}>
           <div className={styles.block}>
-            <Image className={styles.img} src={Img1} alt="Инженерная печать" />
+            <Image
+              className={styles.img}
+              src={Img1}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              alt="Печать чертежа на принтере"
+            />
             <h3 className="h3">Инженерная печать</h3>
             <ul className="list" role="list">
               <li>Печать проектов</li>
@@ -25,7 +30,8 @@ export function ServicesSection() {
             <Image
               className={styles.img}
               src={Img2}
-              alt="Постпечатная обработка"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              alt="Фальцевание чертежей"
             />
             <h3 className="h3">Постпечатная обработка</h3>
             <ul className="list" role="list">
