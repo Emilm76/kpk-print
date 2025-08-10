@@ -43,6 +43,7 @@ export function Modal({
               className={styles.buttonClose}
               onClick={() => setIsOpen(false)}
               type="button"
+              aria-label="Закрыть окно"
             >
               <CloseCrossIcon />
             </button>

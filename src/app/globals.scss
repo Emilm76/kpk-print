@@ -292,15 +292,21 @@ html,
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 8px;
 
   .embla__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--color-blue);
+    padding: 4px;
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-blue);
+    }
     &--selected {
-      background-color: var(--color-grey);
+      &::before {
+        background-color: var(--color-grey);
+      }
     }
   }
 }

@@ -16,12 +16,13 @@ export function EmblaPagination({
     <div className={clsx(className, 'pagination')}>
       {scrollSnaps.map((_, index) => (
         <DotButton
-          key={index}
           onClick={() => onDotButtonClick(index)}
           className={clsx(
             'embla__dot',
-            index === selectedIndex && ' embla__dot--selected'
+            index === selectedIndex && 'embla__dot--selected'
           )}
+          aria-label={clsx('Перейти к слайду', index + 1)}
+          key={index}
         />
       ))}
     </div>
