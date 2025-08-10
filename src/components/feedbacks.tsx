@@ -42,7 +42,7 @@ const reviewsUrl = 'https://yandex.ru/maps/org/kpk_print/137399331691/reviews/';
 
 export function FeedbacksSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, duration: 30 }, [
-    Autoplay({ delay: 3500 }),
+    Autoplay({ delay: 3500, stopOnInteraction: false }),
   ]);
 
   return (
