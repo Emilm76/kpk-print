@@ -4,7 +4,6 @@ import { TemplatePage } from './template-page';
 
 // title до 60 символов, description до 160
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kpk-print.ru'),
   title: `Инженерная печать чертежей А0, А1, А2 | КПК-Принт ${CITY_MAIN.name}`,
   description: `Печать чертежей А0, А1, А2, А3, А4 ${CITY_MAIN.region1} ${CITY_MAIN.region2}. Инженерная печать, фальцевание, брошюровка проектов. Низкие цены, быстрые сроки.`,
 };

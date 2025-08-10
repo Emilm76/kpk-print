@@ -13,7 +13,6 @@ export async function generateMetadata({
 
   if (!cityObj) {
     return {
-      metadataBase: new URL('https://kpk-print.ru'),
       title: 'Инженерная печать чертежей А0, А1, А2 | КПК-Принт',
       description:
         'Печать чертежей А0, А1, А2, А3, А4. Инженерная печать, фальцевание, брошюровка проектов. Низкие цены, быстрые сроки.',
@@ -21,7 +20,6 @@ export async function generateMetadata({
   }
 
   return {
-    metadataBase: new URL('https://kpk-print.ru'),
     title: `Инженерная печать чертежей А0, А1, А2 | КПК-Принт ${cityObj.name}`,
     description: `Печать чертежей А0, А1, А2, А3, А4 ${cityObj.region1} ${cityObj.region2}. Инженерная печать, фальцевание, брошюровка проектов. Низкие цены, быстрые сроки.`,
   };

@@ -1,5 +1,10 @@
+import { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.scss';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://kpk-print.ru'),
+};
 
 // Roboto, Open Sans
 const roboto = Roboto({
