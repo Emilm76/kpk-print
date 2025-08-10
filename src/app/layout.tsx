@@ -21,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="ru" data-scroll-behavior="smooth">
       <head>
+        <meta name="yandex-verification" content="3a6cac99647b16a4" />
+
         {/* Yandex.Metrika counter */}
         <Script id="yandex-metrika" strategy="afterInteractive"></Script>
         <script type="text/javascript">
